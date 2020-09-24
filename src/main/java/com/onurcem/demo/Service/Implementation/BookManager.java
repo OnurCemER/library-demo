@@ -10,6 +10,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -61,24 +62,8 @@ public class BookManager implements IBookService {
     }
 
     @Override
-    public BookDto getByBookName(String bookName) {
-        Book b = bookRepo.findByBookName(bookName);
-        return modelMapper.map(b, BookDto.class);
-    }
-
-    @Override
-    public BookDto getBySerialName(String serialName) {
-        return modelMapper.map(bookRepo.findByBookSerialName(serialName), BookDto.class);
-    }
-
-    @Override
-    public BookDto getByIsbnNo(String isbnNo) {
-        return modelMapper.map(bookRepo.findByIsbnNumber(isbnNo), BookDto.class);
-    }
-
-    @Override
-    public BookDto getByAuthorName(String authorName) {
-        return null;
+    public List<Book> getByBookName(String bookName) {
+        return bookRepo.findAllByBookName(bookName);
     }
 
     @Override

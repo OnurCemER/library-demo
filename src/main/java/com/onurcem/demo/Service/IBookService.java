@@ -16,15 +16,12 @@ public interface IBookService {
 
     List<BookDto> getAll();
 
+    //List<Book> findAll();
+
     BookDto getById(Long id);
 
     Author getAuthor(Long id);
 
-    BookDto getByBookName(String bookName);
+    List<Book> getByBookName(String bookName);
 
-    BookDto getBySerialName(String serialName);
-
-    BookDto getByIsbnNo(String isbnNo);
-
-    BookDto getByAuthorName(String authorName);
 }

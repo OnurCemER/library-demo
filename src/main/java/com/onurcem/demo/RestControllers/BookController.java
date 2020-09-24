@@ -39,23 +39,23 @@ public class BookController {
         return ResponseEntity.ok(data);
     }
 
-    @GetMapping("/{bookName}")
-    public ResponseEntity<BookDto> getByBookName(@PathVariable(value = "bookName", required = true) String bookName){
-        return ResponseEntity.ok(bookManager.getByBookName(bookName));
-    }
-
-    @GetMapping("/list/{serialName}")
-    public ResponseEntity<BookDto> getBySerialName(@PathVariable(value = "serialName", required = true) String serialName){
-        return ResponseEntity.ok(bookManager.getByBookName(serialName));
-    }
-
-    @GetMapping("/list/{isbnNo}")
-    public ResponseEntity<BookDto> getByIsbnNumber(@PathVariable(value = "isbnNo", required = true) String isbnNo){
-        return ResponseEntity.ok(bookManager.getByBookName(isbnNo));
-    }
-
-    @GetMapping("/list/{authorName}")
-    public ResponseEntity<BookDto> getByAuthorName(@PathVariable(value = "authorName", required = true) String authorName){
-        return ResponseEntity.ok(bookManager.getByBookName(authorName));
-    }
+//    @GetMapping("/{bookName}")
+//    public ResponseEntity<BookDto> getByBookName(@PathVariable(value = "bookName", required = true) String bookName){
+//        return ResponseEntity.ok(bookManager.getByBookName(bookName));
+//    }
+//
+//    @GetMapping("/list/{serialName}")
+//    public ResponseEntity<BookDto> getBySerialName(@PathVariable(value = "serialName", required = true) String serialName){
+//        return ResponseEntity.ok(bookManager.getByBookName(serialName));
+//    }
+//
+//    @GetMapping("/list/{isbnNo}")
+//    public ResponseEntity<BookDto> getByIsbnNumber(@PathVariable(value = "isbnNo", required = true) String isbnNo){
+//        return ResponseEntity.ok(bookManager.getByBookName(isbnNo));
+//    }
+//
+//    @GetMapping("/list/{authorName}")
+//    public ResponseEntity<BookDto> getByAuthorName(@PathVariable(value = "authorName", required = true) String authorName){
+//        return ResponseEntity.ok(bookManager.getByBookName(authorName));
+//    }
 }
