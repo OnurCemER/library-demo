@@ -1,8 +1,11 @@
 package com.onurcem.demo.Service.Implementation;
 
+import com.onurcem.demo.DTO.AuthorDto;
 import com.onurcem.demo.DTO.BookDto;
+import com.onurcem.demo.Entity.Author;
 import com.onurcem.demo.Entity.Book;
 import com.onurcem.demo.Service.IBookService;
+import com.onurcem.demo.repo.AuthorRepo;
 import com.onurcem.demo.repo.BookRepo;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -15,10 +18,12 @@ public class BookManager implements IBookService {
 
     private final BookRepo bookRepo;
     private final ModelMapper modelMapper;
+    private final AuthorRepo authorRepo;
 
-    public BookManager(BookRepo bookRepo, ModelMapper modelMapper) {
+    public BookManager(BookRepo bookRepo, ModelMapper modelMapper, AuthorRepo authorRepo) {
         this.bookRepo = bookRepo;
         this.modelMapper = modelMapper;
+        this.authorRepo = authorRepo;
     }
 
 
@@ -54,6 +59,11 @@ public class BookManager implements IBookService {
     }
 
     @Override
+    public BookDto getById(Long id) {
+        return modelMapper.map(bookRepo.getOne(id),BookDto.class);
+    }
+
+    @Override
     public BookDto getByBookName(String bookName) {
         Book b = bookRepo.findByBookName(bookName);
         return modelMapper.map(b, BookDto.class);
@@ -72,5 +82,10 @@ public class BookManager implements IBookService {
     @Override
     public BookDto getByAuthorName(String authorName) {
         return null;
+    }
+
+    @Override
+    public Author getAuthor(Long id){
+        return authorRepo.getOne(id);
     }
 }

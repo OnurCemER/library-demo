@@ -1,4 +1,4 @@
-package com.onurcem.demo.Controller;
+package com.onurcem.demo.RestControllers;
 
 
 import com.onurcem.demo.DTO.BookDto;

@@ -1,5 +1,8 @@
 package com.onurcem.demo.DTO;
 
+import com.onurcem.demo.Entity.Author;
+import com.onurcem.demo.Entity.Publisher;
+
 public class BookDto {
 
     private Long id;
@@ -8,16 +11,20 @@ public class BookDto {
     private String bookSerialName;
     private String isbnNumber;
     private String bookDescription;
+    private Author author;
+    private Publisher publisher;
 
     public BookDto() {
     }
 
-    public BookDto(String bookName, String bookSubName, String bookSerialName, String isbnNumber, String bookDescription) {
+    public BookDto(String bookName, String bookSubName, String bookSerialName, String isbnNumber, String bookDescription, Author author, Publisher publisher) {
         this.bookName = bookName;
         this.bookSubName = bookSubName;
         this.bookSerialName = bookSerialName;
         this.isbnNumber = isbnNumber;
         this.bookDescription = bookDescription;
+        this.author = author;
+        this.publisher = publisher;
     }
 
     public Long getId() {
@@ -66,5 +73,21 @@ public class BookDto {
 
     public void setBookDescription(String bookDescription) {
         this.bookDescription = bookDescription;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 }

@@ -2,7 +2,7 @@ package com.onurcem.demo.DTO;
 
 public class AuthorDto {
     private Long id;
-    private String Name;
+    private String name;
     private String description;
     private Long bookId;
     private BookDto authorBooks;
@@ -11,7 +11,7 @@ public class AuthorDto {
     }
 
     public AuthorDto(String name, String description, Long bookId, BookDto authorBooks) {
-        Name = name;
+        this.name = name;
         this.description = description;
         this.bookId = bookId;
         this.authorBooks = authorBooks;
@@ -26,11 +26,11 @@ public class AuthorDto {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getDescription() {

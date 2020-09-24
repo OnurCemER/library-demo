@@ -1,4 +1,4 @@
-package com.onurcem.demo.Controller;
+package com.onurcem.demo.RestControllers;
 
 import com.onurcem.demo.DTO.AuthorDto;
 import com.onurcem.demo.Service.Implementation.AuthorManager;
