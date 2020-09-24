@@ -19,11 +19,8 @@ public class AuthorManager implements IAuthorService {
     }
 
     @Override
-    public AuthorDto save(AuthorDto authorDto) {
-        Author a = modelMapper.map(authorDto, Author.class);
-        a = authorRepo.save(a);
-        authorDto.setId(a.getId());
-        return authorDto;
+    public void save(Author author) {
+        authorRepo.save(author);
     }
 
     @Override

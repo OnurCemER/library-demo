@@ -2,12 +2,13 @@ package com.onurcem.demo.Service;
 
 import com.onurcem.demo.DTO.BookDto;
 import com.onurcem.demo.Entity.Author;
+import com.onurcem.demo.Entity.Book;
 
 import java.util.List;
 
 public interface IBookService {
 
-    BookDto save(BookDto bookDto);
+    void save(Book book);
 
     BookDto update(Long id, BookDto bookDto);
 

@@ -37,7 +37,7 @@ public class SpringBookController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addBook(@ModelAttribute("book") BookDto book){
+    public String addBook(@ModelAttribute("book") Book book){
         bookManager.save(book);
         return "redirect:/";
     }

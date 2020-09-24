@@ -10,7 +10,8 @@ public class AuthorDto {
     public AuthorDto() {
     }
 
-    public AuthorDto(String name, String description, Long bookId, BookDto authorBooks) {
+    public AuthorDto(Long id, String name, String description, Long bookId, BookDto authorBooks) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.bookId = bookId;

@@ -15,6 +15,9 @@ public class Publisher implements Serializable {
     @Column(name = "publisher_name")
     private String publisherName;
 
+    @Column(name = "publisher_description")
+    private String publisherDescription;
+
     @JoinColumn(name = "books_publisher")
     @OneToMany(fetch = FetchType.LAZY)
     private List<Book> publishedBooks;
@@ -22,8 +25,9 @@ public class Publisher implements Serializable {
     public Publisher() {
     }
 
-    public Publisher(String publisherName, List<Book> publishedBooks) {
+    public Publisher(String publisherName, String publisherDescription, List<Book> publishedBooks) {
         this.publisherName = publisherName;
+        this.publisherDescription = publisherDescription;
         this.publishedBooks = publishedBooks;
     }
 
@@ -49,5 +53,13 @@ public class Publisher implements Serializable {
 
     public void setPublishedBooks(List<Book> publishedBooks) {
         this.publishedBooks = publishedBooks;
+    }
+
+    public String getPublisherDescription() {
+        return publisherDescription;
+    }
+
+    public void setPublisherDescription(String publisherDescription) {
+        this.publisherDescription = publisherDescription;
     }
 }

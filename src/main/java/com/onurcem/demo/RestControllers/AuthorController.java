@@ -1,6 +1,7 @@
 package com.onurcem.demo.RestControllers;
 
 import com.onurcem.demo.DTO.AuthorDto;
+import com.onurcem.demo.Entity.Author;
 import com.onurcem.demo.Service.Implementation.AuthorManager;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +17,8 @@ public class AuthorController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<AuthorDto> addAuthor(@RequestBody AuthorDto authorDto){
-        return ResponseEntity.ok(authorManager.save(authorDto));
+    public void addAuthor(@RequestBody Author author){
+         authorManager.save(author);
     }
 
     @DeleteMapping("/delete/{id}")

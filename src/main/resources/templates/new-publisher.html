@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <h1>Add New Publisher</h1>
+    <br>
+    <form action="#" th:action="@{/add-publisher}" th:object="${publisher}" method="post">
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Publisher ID : </td>
+                <td><input type="text" th:field="*{id}"></td>
+            </tr>
+            <tr>
+                <td>Publisher Name : </td>
+                <td><input type="text" th:field="*{publisherName}"></td>
+            </tr>
+            <tr>
+                <td>Publisher Description : </td>
+                <td><input type="text" th:field="*{publisherDescription}"></td>
+            </tr>
+            <tr>
+                <td colspan="2"> <button type="submit">SAVE</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

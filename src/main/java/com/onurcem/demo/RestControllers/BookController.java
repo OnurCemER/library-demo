@@ -2,9 +2,9 @@ package com.onurcem.demo.RestControllers;
 
 
 import com.onurcem.demo.DTO.BookDto;
+import com.onurcem.demo.Entity.Book;
 import com.onurcem.demo.Service.Implementation.BookManager;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,8 +19,8 @@ public class BookController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<BookDto> add(@RequestBody BookDto bookDto){
-        return ResponseEntity.ok(bookManager.save(bookDto));
+    public void add(@RequestBody Book book){
+        bookManager.save(book);
     }
 
     @PutMapping("/update")

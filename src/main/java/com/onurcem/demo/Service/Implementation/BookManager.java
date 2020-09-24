@@ -27,10 +27,8 @@ public class BookManager implements IBookService {
 
 
     @Override
-    public BookDto save(BookDto bookDto) {
-        Book book = modelMapper.map(bookDto,Book.class);
-        book = bookRepo.save(book);
-        return bookDto;
+    public void save(Book book) {
+        bookRepo.save(book);
     }
 
     @Override
