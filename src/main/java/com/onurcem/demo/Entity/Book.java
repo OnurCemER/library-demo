@@ -110,4 +110,5 @@ public class Book implements Serializable {
     public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
     }
+
 }
