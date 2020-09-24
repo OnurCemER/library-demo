@@ -51,6 +51,14 @@ public class SpringBookController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/detail/{id}")
+    public ModelAndView bookDetail(@PathVariable(name = "id") Long id){
+        ModelAndView modelAndView = new ModelAndView("detail");
+        BookDto bookDto = bookManager.getById(id);
+        modelAndView.addObject("book", bookDto);
+        return modelAndView;
+    }
+
     @RequestMapping(value = "/delete/{id}")
     public String deleteBook(@PathVariable(name = "id") Long id){
         bookManager.delete(id);
