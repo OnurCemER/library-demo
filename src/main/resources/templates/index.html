@@ -9,6 +9,26 @@
     <a href="new">Add New Book</a>|
     <a href="new-author">Add New Author</a>|
     <a href="new-publisher">Add New Publisher</a>
+
+    <br><br>
+
+    <form th:action="@{/list-bookname}">
+            Filter With Book Name :
+            <input type="text" name="bname" required>
+            <input type="submit" value="Search">
+    </form>
+    <form action="#" th:action="@{/list-serialname}">
+            Filter With Book Serial Name :
+            <input type="text" name="book_serial_name" required>
+            <input type="submit" value="Search">
+    </form>
+    <form action="#" th:action="@{/list-isbn}">
+            Filter With ISBN Number :
+            <input type="text" name="isbn_number" required>
+            <input type="submit" value="Search">
+    </form>
+
+
     <br>
     <table style="align-content: center" border="1">
         <tr>

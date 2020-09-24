@@ -22,6 +22,10 @@ public interface IBookService {
 
     Author getAuthor(Long id);
 
-    List<Book> getByBookName(String bookName);
+    List<Book> findAllByBookName(String bookName);
+
+    List<Book> findAllByBookSerialName(String serialName);
+
+    List<Book> findAllByIsbnNumber(String serialName);
 
 }
