@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>List Book Name</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
-<table style="align-content: center" border="1">
+<table style="align-content: center" border="1" class="table table-striped">
     <tr>
         <th>Book Name</th>
         <th>Book Description</th>
@@ -24,8 +25,9 @@
         <td th:text="${book.author.authorName}">Author</td>
         <td th:text="${book.publisher.publisherName}">Book Serial Name</td>
         <td>
-            <a th:href="@{'/update/' + ${book.id}}">Update   </a>
-            <a th:href="@{'/delete/' + ${book.id}}"> | Delete</a>
+            <a class="btn btn-warning" th:href="@{'/update/' + ${book.id}}">Update</a>
+            <a class="btn btn-primary" th:href="@{'/delete/' + ${book.id}}">Delete</a>
+            <a class="btn btn-secondary" th:href="@{'/detail/' + ${book.id}}">Detail</a>
         </td>
     </tr>
 </table>
