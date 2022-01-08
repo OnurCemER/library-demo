@@ -1,7 +1,7 @@
 # Nasıl Kurulur?
 Uygulamayı kendi bilgisayarınıza indirmek için komut satırınızdan "git clone https://github.com/OnurCemER/library-demo.git" komutunu çalıştırın. Ardından uygulamayı geliştirme ortamınızda açabilirsiniz.
 # Nasıl Çalışır?
-Projenin çalışır hale gelmesi için öncelikle MAVEN komut satırından "mvn install" ya da "mvn clean install" komutu kullanılarak uygulamanın derlenmesi sağlanmalıdır. Ardından elde edilen JAR dosyasını istediğiniz sunucuda kullanabilirsiniz.
+Projenin çalışır hale gelmesi için öncelikle MAVEN komut satırından `mvn install` ya da `mvn clean install` komutu kullanılarak uygulamanın derlenmesi sağlanmalıdır. Ardından elde edilen JAR dosyasını istediğiniz sunucuda kullanabilirsiniz.
 # Geliştirme Aşamaları
 ## Projeye Ait Entity Yapısının Oluşturulması
 Entity nesnelerinin oluşturulması için öncelikle ilgili nesnelerin repositoryleri oluşturulmuştur. Bu repositoryler JpaRepository arayüzünden türetilerek JpaRepositorynin yeteneklerinden yararlanılmıştır. JpaRepository içinde yer almayan metodlar için yeni metodlar oluşturularak veritabanı sorgularının ilgili uygulamaya özel olması sağlanmıştır. Burada kullanılan yöntem ile herhangi bir SQL sorgusu yazmadan tamamen JpaRepository arayüzünün yeteneklerinden yararlanılarak arama işlemleri için metodlar yazılmıştır. JpaRepositorynin query metodları ile SQL sorgusu yazmadan kitap adına, kitap seri numarasına ve kitabın ISBN numarasına göre arama yapılması sağlanmıştır. Burada yapılan aramalarda kullanıcının birebir yazma zorunluluğunu kaldırmak için kullanıcının belirttiği kadar değerle arama yaparak değerin içinde geçtiği tüm kayıtları listelemektedir.
